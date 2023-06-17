@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RetrofitExample</string>
+    <string name="welcome_text">Hi human! I\'m here to eat you!</string>
+</resources>
