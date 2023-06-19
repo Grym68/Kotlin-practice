@@ -53,7 +53,7 @@ interface ApiService{
      * the annotation of GET with the prompt of "character"
      * is used to fetch the data of "character" in our api call
      *
-     * returns -
+     * returns - a call type CharacterResponse
      */
     @GET("character")
     fun fetchCharacters(

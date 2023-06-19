@@ -33,5 +33,36 @@
                 android:id="@+id/name"
                 android:layout_height="wrap_content"
                 android:layout_width="0dp"/>
+            <TextView
+                tools:text ="Name"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/name"
+                app:layout_constraintStart_toStartOf="@id/name"
+                app:layout_constraintEnd_toEndOf="@id/name"
+                android:id="@+id/species"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"/>
+            <TextView
+                tools:text ="Name"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/species"
+                app:layout_constraintStart_toStartOf="@id/species"
+                app:layout_constraintEnd_toEndOf="@id/species"
+                android:id="@+id/gender"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"/>
+
+            <Button
+                    app:layout_constraintTop_toBottomOf="@id/gender"
+                    app:layout_constraintStart_toStartOf="@id/gender"
+                    app:layout_constraintEnd_toEndOf="@id/gender"
+                    android:textSize="12sp"
+                    android:text="@string/Show_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/character_profile"
+                    android:gravity="center|end"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

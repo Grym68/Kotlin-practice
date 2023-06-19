@@ -1,47 +1,59 @@
 package co.uk.practice.retrofitexample
 
 import android.os.Bundle
-import android.util.Log
-import android.widget.ImageView
-import android.widget.TextView
+import android.view.View
+import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import co.uk.practice.retrofitexample.network.ApiClient
+import co.uk.practice.retrofitexample.network.Character
 import co.uk.practice.retrofitexample.network.CharacterResponse
+import com.google.android.material.snackbar.Snackbar
 import retrofit2.Call
 import retrofit2.Response
 
 
 // the retrofit tutorial
 class MainActivity : AppCompatActivity() {
+
+    private val viewModel: MainViewModel by lazy {
+        ViewModelProvider(this).get(MainViewModel::class.java)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val client = ApiClient.apiService.fetchCharacters("1")
+         viewModel.characterLiveData.observe(this) { state ->
+             processCharacterResponse(state)
+         }
+    }
 
 
-        client.enqueue(object : retrofit2.Callback<CharacterResponse> {
-            override fun onResponse(call: Call<CharacterResponse>, response: Response<CharacterResponse>) {
-                if (response.isSuccessful) {
-                    Log.d("characters", "" + response.body())
-
-                    val result = response.body()?.results
-                    result?.let {
-                        val adapter = MainAdapter(result)
-                        val recyclerView = findViewById<RecyclerView>(R.id.charactersRv)
-                        recyclerView?.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-                        recyclerView?.adapter = adapter
-                    }
+    private fun processCharacterResponse(state: ScreenState<List<Character>?>) {
+        val progressBar = findViewById<ProgressBar>(R.id.progressBar)
+        when(state) {
+            is ScreenState.Loading -> {
+                // TODO Add progress bar
+                progressBar.visibility = View.VISIBLE
+            }
+            is ScreenState.Success -> {
+                progressBar.visibility = View.GONE
+                if(state.data != null) {
+                    val adapter = MainAdapter(this,state.data)
+                    val recyclerView = findViewById<RecyclerView>(R.id.charactersRv)
+                    recyclerView?.layoutManager =
+                        StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+                    recyclerView.adapter = adapter
                 }
             }
-
-            override fun onFailure(call: Call<CharacterResponse>, t: Throwable) {
-                Log.e("failed", "" + t.message)
+            is ScreenState.Error -> {
+                progressBar.visibility = View.GONE
+                val view = progressBar.rootView
+                Snackbar.make(view,state.message!!, Snackbar.LENGTH_LONG).show()
+                // TODO Display the error
             }
-
-        })
+        }
     }
 }
 
