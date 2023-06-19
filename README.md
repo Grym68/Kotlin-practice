@@ -6,7 +6,8 @@ This repo is to practice Kotlin in
  - [X] Learn how to get data from an API
  - [X] Learn how to Display the data using the RecyclerView
  - [X] Learn how to use Moshi, Retrofit, Coil.
- - [ ] Learn MVVM
+ - [X] Learn MVVM
+ - [X] Learn to use ViewBinding
  - [ ] Learn Unit Testing in Kotlin
  - [ ] Learn Unit Tests for SDK
  - [ ] Explore what the problem with the Tutorful API is
