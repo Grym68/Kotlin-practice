@@ -18,7 +18,7 @@ class ResouseComparerTest {
 
     @After
     fun teardown() {
-        resourceComparer = null
+//        resourceComparer = null
     }
 
     @Test
