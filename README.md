@@ -9,7 +9,13 @@ This repo is to practice Kotlin in
  - [X] Learn MVVM
  - [X] Learn to use ViewBinding
  - [ ] Learn Unit Testing in Kotlin
- - [ ] Learn Unit Tests for SDK
- - [ ] Explore what the problem with the Tutorful API is
- - [ ] Email the team about the tasks and their API
- - [ ] Tuesday the latest, pull the repo and submit your work
+	- [X] Learn local tests
+	- [X] Learn Integration test
+	- [ ] Learn how to test API connections
+	- [ ] Learn how to test DB's
+	- [X] Testing Repositories
+	- [ ] Testing DAO classes
+	- [ ] Testing implementation classes
+ - [X] Explore what the problem with the Tutorful API is
+ - [X] Email the team about the tasks and their API
+ - [X] Tuesday the latest, pull the repo and submit your work

@@ -55,6 +55,7 @@ dependencies {
 
     // Room
     implementation "androidx.room:room-runtime:2.5.1"
+    testImplementation 'junit:junit:4.13.1'
     kapt "androidx.room:room-compiler:2.5.1"
 
     // Kotlin Extensions and Coroutines support for Room
