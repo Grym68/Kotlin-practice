@@ -26,5 +26,5 @@ class ShoppingViewModelTest {
         assertThat(value.getContentIfNotHandled()?.status).isEqualTo(Status.ERROR)
     }
 
-    fun 
+    fun
 }
