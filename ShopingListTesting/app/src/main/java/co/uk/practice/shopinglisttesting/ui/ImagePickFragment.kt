@@ -8,7 +8,7 @@ import co.uk.practice.shopinglisttesting.R
 
 class ImagePickFragment: Fragment(R.layout.fragment_image_pick) {
 
-    lateinit var viewModel: ShoppingViewModel
+    private lateinit var viewModel: ShoppingViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
