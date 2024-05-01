@@ -1,0 +1,17 @@
+Compose_Practice/.gradle*
+Compose_Practice/.idea*
+Compose_Practice/local.properties
+ShopingListTesting/.gradle*
+ShopingListTesting/.idea*
+ShopingListTesting/local.properties
+ShopingListTesting/app/build*
+ShopingListTesting/build*
+UnitTestingPractice/.gradle*
+UnitTestingPractice/.idea*
+UnitTestingPractice/local.properties
+UnitTestingPractice/app/build*
+ViewBindingRV/.gradle*
+ViewBindingRV/.idea*
+ViewBindingRV/local.properties
+ViewBindingRV/app/build*
+
